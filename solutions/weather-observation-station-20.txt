@@ -1,0 +1,18 @@
+// Problem: Weather Observation Station 20
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true
+// Date: 2025-09-08T02:12:59.964Z
+// Language: Unknown
+
+/*
+Enter your query here.
+*/
+SELECT ROUND(AVG(LAT_N),4) AS MEDIAN FROM
+​
+(SELECT LAT_N,
+      ROW_NUMBER() OVER (ORDER BY LAT_N ASC, id ASC) AS RowAsc,
+      ROW_NUMBER() OVER (ORDER BY LAT_N DESC, ID DESC) AS RowDesc
+   FROM STATION
+    )data
+WHERE
+   RowAsc IN (RowDesc, RowDesc - 1, RowDesc + 1)
