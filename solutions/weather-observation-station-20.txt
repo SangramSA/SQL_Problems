@@ -1,18 +1,13 @@
 // Problem: Weather Observation Station 20
 // Difficulty: Unknown
 // URL: https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true
-// Date: 2025-09-08T02:21:33.967Z
+// Date: 2025-09-08T02:25:46.204Z
 // Language: Unknown
 
-/*
-Enter your query here.
-*/
-SELECT ROUND(AVG(LAT_N),4) AS MEDIAN FROM
 ​
-(SELECT LAT_N,
-      ROW_NUMBER() OVER (ORDER BY LAT_N ASC, id ASC) AS RowAsc,
-      ROW_NUMBER() OVER (ORDER BY LAT_N DESC, ID DESC) AS RowDesc
-   FROM STATION
-    )data
-WHERE
-   RowAsc IN (RowDesc, RowDesc - 1, RowDesc + 1)
+/*
+    Enter your query here and follow these instructions:
+    1. Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+    2. The AS keyword causes errors, so follow this convention: "Select t.Field From table1 t" instead of "select t.Field From table1 AS t"
+    3. Type your code immediately after comment. Don't leave any blank line.
+*/
