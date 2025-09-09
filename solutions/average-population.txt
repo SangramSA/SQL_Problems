@@ -1,0 +1,7 @@
+// Problem: Average Population
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/average-population/problem?isFullScreen=true
+// Date: 2025-09-09T05:26:07.713Z
+// Language: Unknown
+
+SELECT FLOOR(AVG(POPULATION)) FROM CITY;
