@@ -1,7 +1,7 @@
 // Problem: Print Prime Numbers
 // Difficulty: Unknown
 // URL: https://www.hackerrank.com/challenges/print-prime-numbers/problem?isFullScreen=true
-// Date: 2025-09-09T05:23:44.022Z
+// Date: 2025-09-09T05:24:44.383Z
 // Language: Unknown
 
 /*
