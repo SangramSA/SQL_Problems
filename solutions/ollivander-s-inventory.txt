@@ -1,0 +1,20 @@
+// Problem: Ollivander's Inventory
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/harry-potter-and-wands/problem?isFullScreen=true
+// Date: 2025-09-13T06:28:15.085Z
+// Language: Unknown
+
+/*
+Enter your query here.
+*/
+​
+SELECT W.id, WP.age, min(W.coins_needed), W.power
+    FROM Wands W JOIN Wands_Property WP
+        ON W.code = WP.code
+    WHERE WP.is_evil = 0
+    GROUP BY W.power
+    ORDER BY W.power DESC, WP.age DESC;
+    
+​
+​
+​
