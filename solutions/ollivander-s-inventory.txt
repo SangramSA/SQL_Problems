@@ -1,19 +1,66 @@
 // Problem: Ollivander's Inventory
 // Difficulty: Unknown
 // URL: https://www.hackerrank.com/challenges/harry-potter-and-wands/problem?isFullScreen=true
-// Date: 2025-09-13T06:28:15.085Z
+// Date: 2025-09-13T06:46:19.856Z
 // Language: Unknown
 
 /*
 Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
 */
+-- WITH WANDS_RANK AS(
+--     SELECT 
+--         W.id,
+--         WP.age,
+--         W.coins_needed,
+--         W.power,
+--         ROW_NUMBER() OVER(PARTITION BY W.power, W.age ORDER BY W.coins_needed) AS cost_rank
+--     FROM 
+--         Wands W JOIN Wands_Property WP
+--     ON 
+--         W.code = WP.code
+--     WHERE
+--         WP.is_evil = 0
+-- )
 ​
-SELECT W.id, WP.age, min(W.coins_needed), W.power
-    FROM Wands W JOIN Wands_Property WP
-        ON W.code = WP.code
-    WHERE WP.is_evil = 0
-    GROUP BY W.power
-    ORDER BY W.power DESC, WP.age DESC;
+-- SELECT 
+--     WR.id, 
+--     WR.age, 
+--     WR.coins_needed, 
+--     WR.power
+-- FROM 
+--     Wands_RANKS WR
+-- WHERE 
+--     WR.cost_rank = 1
+-- ORDER BY 
+--     WR.power DESC, 
+--     WR.age DESC;
+​
+WITH Wand_Cost_Ranks AS (
+    SELECT 
+        W.id, 
+        WP.age, 
+        W.coins_needed, 
+        W.power, 
+        ROW_NUMBER() OVER (PARTITION BY W.power, WP.age ORDER BY W.coins_needed) AS cost_rank
+    FROM 
+        Wands W
+        JOIN Wands_Property WP ON W.code = WP.code
+    WHERE 
+        WP.is_evil = 0
+)
+SELECT 
+    id, 
+    age, 
+    coins_needed, 
+    power
+FROM 
+    Wand_Cost_Ranks
+WHERE 
+    cost_rank = 1
+ORDER BY 
+    power DESC, 
+    age DESC;
     
 ​
 ​
