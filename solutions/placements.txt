@@ -1,0 +1,32 @@
+// Problem: Placements
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true
+// Date: 2025-09-14T00:56:27.471Z
+// Language: Unknown
+
+/*
+Enter your query here.
+*/
+WITH STUDENTS_SALARY AS (
+    SELECT
+        S.ID AS SID, 
+        S.NAME, 
+        SA.ID, 
+        SA.SALARY
+    FROM 
+        STUDENTS S JOIN PACKAGES SA
+    ON 
+        S.ID = SA.ID
+),
+FRIEND_SALARY AS (
+    SELECT 
+        F.ID AS FID, 
+        F.FRIEND_ID, 
+        SA.ID, 
+        SA.SALARY 
+    FROM 
+        FRIENDS F JOIN PACKAGES SA
+    ON 
+        F.FRIEND_ID = SA.ID
+)
+SELECT
