@@ -1,7 +1,7 @@
 // Problem: Placements
 // Difficulty: Unknown
 // URL: https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true
-// Date: 2025-09-14T00:56:47.647Z
+// Date: 2025-09-14T00:56:50.850Z
 // Language: Unknown
 
 STUDENTS S JOIN PACKAGES SA
