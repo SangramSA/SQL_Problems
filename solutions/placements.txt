@@ -1,20 +1,10 @@
 // Problem: Placements
 // Difficulty: Unknown
 // URL: https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true
-// Date: 2025-09-14T00:56:30.996Z
+// Date: 2025-09-14T00:56:47.647Z
 // Language: Unknown
 
-/*
-Enter your query here.
-*/
-WITH STUDENTS_SALARY AS (
-    SELECT
-        S.ID AS SID, 
-        S.NAME, 
-        SA.ID, 
-        SA.SALARY
-    FROM 
-        STUDENTS S JOIN PACKAGES SA
+STUDENTS S JOIN PACKAGES SA
     ON 
         S.ID = SA.ID
 ),
@@ -29,4 +19,13 @@ FRIEND_SALARY AS (
     ON 
         F.FRIEND_ID = SA.ID
 )
-SELECT
+SELECT 
+    SS.NAME
+FROM 
+    STUDENTS_SALARY SS JOIN FRIEND_SALARY FS
+ON 
+    SS.SID=FS.FID
+WHERE 
+    SS.SALARY<FS.SALARY
+ORDER BY 
+    FS.SALARY;
