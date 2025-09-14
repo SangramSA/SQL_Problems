@@ -1,0 +1,20 @@
+// Problem: Weather Observation Station 19
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/weather-observation-station-19/problem?isFullScreen=true
+// Date: 2025-09-14T00:23:39.450Z
+// Language: Unknown
+
+/*
+Enter your query here.
+*/
+SELECT ROUND(
+    SQRT(
+        POWER(
+                (min(LAT_N)- max(LAT_N)), 2
+                )
+            +
+        POWER(
+                (min(LONG_W)- max(LONG_W)), 2
+                )
+            ), 4)
+     FROM STATION;
