@@ -1,0 +1,7 @@
+// Problem: Symmetric Pairs
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/symmetric-pairs/forum
+// Date: 2025-09-17T05:19:46.152Z
+// Language: Unknown
+
+​
