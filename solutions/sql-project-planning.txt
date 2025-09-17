@@ -1,0 +1,7 @@
+// Problem: SQL Project Planning
+// Difficulty: Unknown
+// URL: https://www.hackerrank.com/challenges/sql-projects/forum
+// Date: 2025-09-17T18:32:26.276Z
+// Language: Unknown
+
+​
