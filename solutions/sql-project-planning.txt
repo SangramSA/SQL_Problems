@@ -1,7 +1,32 @@
 // Problem: SQL Project Planning
 // Difficulty: Unknown
-// URL: https://www.hackerrank.com/challenges/sql-projects/forum
-// Date: 2025-09-18T04:28:30.806Z
+// URL: https://www.hackerrank.com/challenges/sql-projects/problem?isFullScreen=true
+// Date: 2025-09-18T05:45:32.749Z
 // Language: Unknown
 
-​
+/*
+Enter your query here.
+*/
+
+    (SELECT 
+        Start_Date 
+    FROM
+        Projects
+    WHERE 
+        Start_Date NOT IN (SELECT End_Date FROM Projects)) AS A
+    INNER JOIN
+SELECT 
+    Start_Date, 
+    min(END_DATE)
+FROM
+    (SELECT
+        End_Date
+    FROM 
+        Projects
+    WHERE END_DATE NOT IN (SELECT Start_Date FROM Projects)) AS B
+WHERE 
+    A.Start_Date<B.END_DATE
+GROUP BY
+    Start_Date
+ORDER BY    
+    min(END_DATE) -  Start_Date ASC, Start_Date ASC;
