@@ -1,7 +1,7 @@
 // Problem: SQL Project Planning
 // Difficulty: Unknown
 // URL: https://www.hackerrank.com/challenges/sql-projects/problem?isFullScreen=true
-// Date: 2025-09-18T05:45:32.749Z
+// Date: 2025-09-18T05:47:13.220Z
 // Language: Unknown
 
 /*
@@ -16,8 +16,8 @@ Enter your query here.
         Start_Date NOT IN (SELECT End_Date FROM Projects)) AS A
     INNER JOIN
 SELECT 
-    Start_Date, 
-    min(END_DATE)
+    A.Start_Date, 
+    min(B.END_DATE)
 FROM
     (SELECT
         End_Date
@@ -27,6 +27,6 @@ FROM
 WHERE 
     A.Start_Date<B.END_DATE
 GROUP BY
-    Start_Date
+    A.Start_Date
 ORDER BY    
-    min(END_DATE) -  Start_Date ASC, Start_Date ASC;
+    min(B.END_DATE) -  A.Start_Date ASC, A.Start_Date ASC;
