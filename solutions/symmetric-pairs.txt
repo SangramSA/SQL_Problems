@@ -1,7 +1,16 @@
 // Problem: Symmetric Pairs
 // Difficulty: Unknown
-// URL: https://www.hackerrank.com/challenges/symmetric-pairs/forum
-// Date: 2025-09-17T05:19:46.152Z
+// URL: https://www.hackerrank.com/challenges/symmetric-pairs/problem?isFullScreen=true
+// Date: 2025-09-18T05:50:29.186Z
 // Language: Unknown
 
-​
+/*
+Enter your query here.
+*/
+SELECT 
+    F1.X AS X1,
+    F2.Y AS Y2
+FROM 
+    Functions AS F1 INNER
+    Functions AS F2
+ON F1.X = F2.Y AND F2.X = F1.Y;
